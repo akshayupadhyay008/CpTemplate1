@@ -1,0 +1,20 @@
+
+PROPERTY 1 
+if segment from L to R satisfies the Good Property 
+1. then any segment inside this should be good  (all inner GOOD)
+OR 
+2. big segment outside should also be Good  (all outer GOOD)
+
+PROPERTY 2
+Able to recalculate the function when you 
+1. add a new element (from right when r++)
+2. remove an element (from left when l--)
+
+f0(r,0,num-1) {
+    add(r);
+    while(!good()) {
+        remove(l);
+        l++;
+    }
+}
+
