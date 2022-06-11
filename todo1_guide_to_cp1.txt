@@ -1,0 +1,84 @@
+todo1
+0. /n and endl difference 
+and interactive prblms use  
+why this why not other 
+
+1. N queen optimised 
+2. ones and twos compliment - NOT operation
+
+ 
+3.
+{
+
+check bit me subtraction 
+
+BIT notes 
+
+1. set the kth bit -->  x | (1 << k) 
+2. unset the kth bit -->  x & ~(1 << k) 
+3. flip/invert the kth bit -->   x ^ (1 << k) 
+
+check the proof 
+4. the formula   x & (x − 1)   sets the last one bit of x to zero ( unsets the MSB(most significant bit) )
+
+check the proof 
+5. the formula   x & −x    sets all the one bits to zero, except for the last one bit
+
+check the proof 
+6. The formula   x | (x − 1)   inverts all the bits after the last one bit
+
+check the proof 
+7. a positive number x is a power of two exactly when         x & (x − 1) = 0  
+
+NOTE :
+when using bit masks is that 1<<k is always an int bit mask. An easy way to create a long long bit mask is 1LL<<k.
+use 1LL with long long 
+
+
+Additional Functions The g++ compiler also provides the following functions for counting bits:
+• __builtin_clz(x): the number of zeros at the beginning of the bit representation
+• __builtin_ctz(x): the number of zeros at the end of the bit representation
+• __builtin_popcount(x): the number of ones in the bit representation
+• __builtin_parity(x): the parity (even or odd) of the number of ones in the bit representation
+
+
+int x = 5328; // 00000000000000000001010011010000
+cout << __builtin_clz(x) << "\n"; // 19
+cout << __builtin_ctz(x) << "\n"; // 4
+cout << __builtin_popcount(x) << "\n"; // 5
+cout << __builtin_parity(x) << "\n"; // 1
+Note that the above functions only support int numbers, but there are also long long versions of the functions available with the suffix ll.
+
+
+}
+
+
+
+
+4. 
+doubt : 
+// check : 
+    // Finally, the following code goes through the subsets of a set x :     
+    int b = 0;
+    do {
+        // process subset b
+    } while (b = (b - x) & x);
+
+
+
+5. more on bitset
+
+C++ Bitsets The C++ standard library also provides the bitset structure, which corresponds to an array whose each value is either 0 or 1. For example, the following code creates a bitset of 10 elements : 2.3 Bit Manipulation 25 bitset<10> s;
+s[1] = 1;
+s[3] = 1;
+s[4] = 1;
+s[7] = 1;
+cout << s[4] << "\n";                                                                        // 1
+cout << s[5] << "\n";                                                                        // 0
+The function count returns the number of one bits in the bitset : cout << s.count() << "\n"; // 4
+Also bit operations can be directly used to manipulate bitsets : bitset<10> a, b;
+// ...
+bitset<10> c = a & b;
+bitset<10> d = a | b;
+bitset<10> e = a ^ b;
+
